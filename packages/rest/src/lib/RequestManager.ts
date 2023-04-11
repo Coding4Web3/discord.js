@@ -22,6 +22,7 @@ import { resolveBody } from './utils/utils.js';
 // Make this a lazy dynamic import as file-type is a pure ESM package
 const getFileType = lazy(async () => import('file-type'));
 
+
 /**
  * Represents a file to be added to the request
  */
@@ -428,10 +429,10 @@ export class RequestManager extends EventEmitter {
 				// The Blob constructor accepts TypedArray/ArrayBuffer, strings, and Blobs.
 				if (Buffer.isBuffer(file.data)) {
 					// Try to infer the content type from the buffer if one isn't passed
-					const { fileTypeFromBuffer } = await getFileType();
+					const { fromBuffer } = await getFileType();
 					let contentType = file.contentType;
 					if (!contentType) {
-						const parsedType = (await fileTypeFromBuffer(file.data))?.mime;
+						const parsedType = (await fromBuffer(file.data))?.mime;
 						if (parsedType) {
 							contentType = OverwrittenMimeTypes[parsedType as keyof typeof OverwrittenMimeTypes] ?? parsedType;
 						}
