@@ -22,7 +22,6 @@ import { resolveBody } from './utils/utils.js';
 // Make this a lazy dynamic import as file-type is a pure ESM package
 const getFileType = lazy(async () => import('file-type'));
 
-
 /**
  * Represents a file to be added to the request
  */
