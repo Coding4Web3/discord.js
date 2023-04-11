@@ -58,7 +58,7 @@
 		"@sapphire/async-queue": "^1.5.0",
 		"@sapphire/snowflake": "^3.4.0",
 		"discord-api-types": "^0.37.37",
-		"file-type": "^18.2.1",
+		"file-type": "^16.5.4",
 		"tslib": "^2.5.0",
 		"undici": "^5.21.2"
 	},
